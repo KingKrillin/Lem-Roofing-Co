@@ -1,0 +1,100 @@
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+body { font-family: 'Inter', sans-serif; }
+.font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+
+/* Reveal-on-scroll */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; transform: translateY(28px); }
+.reveal.is-visible { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+/* Reveal that glides in AND out as it enters/leaves the viewport (services cards) */
+.reveal-toggle {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-toggle.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Grain texture overlay for hero depth */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Focus visibility — accessible focus rings on dark + light surfaces */
+a, button, input, select, textarea, summary {
+  outline-offset: 3px;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #1E56B8;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.on-dark:focus-visible { outline-color: #FFFFFF; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: #0D3B8E; color: #fff; padding: 0.75rem 1.25rem; font-weight: 600;
+}
+.skip-link:focus { left: 1rem; top: 1rem; border-radius: 0.5rem; }
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-chevron { transform: rotate(180deg); }
+
+.star-row svg { fill: #C8102E; }
+
+/* Mobile sticky CTA bar safe-area */
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0); }
+
+/* Service area map markers */
+#service-map { background: #eef1f5; }
+.service-pin span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0D3B8E;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(15,17,21,0.45);
+}
+.service-pin--primary span {
+  width: 18px;
+  height: 18px;
+  background: #C8102E;
+  border-width: 3px;
+  box-shadow: 0 2px 6px rgba(15,17,21,0.5);
+}
+.leaflet-tooltip.service-pin-label {
+  background: #ffffff;
+  color: #0F1115;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  padding: 3px 9px;
+  border: 1px solid rgba(13,59,142,0.2);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(15,17,21,0.18);
+  white-space: nowrap;
+}
+.leaflet-tooltip.service-pin-label::before { display: none; }
+.leaflet-tooltip.service-pin-label--primary {
+  background: #C8102E;
+  color: #ffffff;
+  border-color: #C8102E;
+}
+@media (max-width: 480px) {
+  .leaflet-tooltip.service-pin-label { font-size: 10px; padding: 2px 7px; }
+}
+
+/* Reviews carousel */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

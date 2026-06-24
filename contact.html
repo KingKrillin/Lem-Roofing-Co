@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com https://unpkg.com; connect-src 'self' https://api.web3forms.com https://*.basemaps.cartocdn.com; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Contact Us | LEM Roofing Co. LLC | Houston, TX</title>
+<meta name="description" content="Get in touch with LEM Roofing Co. LLC for a free roofing estimate. Call, email, or fill out our form — we serve Houston, TX and the surrounding area.">
+<meta property="og:title" content="Contact LEM Roofing Co. LLC | Houston's Trusted Roofing Contractor">
+<meta property="og:description" content="Strong. Reliable. Built to Last. Free roofing estimates across the greater Houston area.">
+<meta property="og:type" content="website">
+<link rel="icon" href="Brand_assets/logo-web.png">
+
+<!-- Fonts: Bebas Neue (display) + Inter (body) per brand guideline -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/js/tailwind-config.js"></script>
+
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-softwhite text-obsidian antialiased">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-obsidian/95 backdrop-blur-sm border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 shrink-0 on-dark" aria-label="LEM Roofing Co. LLC home">
+        <img src="Brand_assets/logo-web.png" alt="LEM Roofing Co. LLC logo" class="h-14 w-14 object-contain">
+        <span class="hidden sm:block font-display text-2xl text-white tracking-wide leading-none">LEM ROOFING CO.</span>
+      </a>
+
+      <div class="hidden xl:flex items-center gap-10">
+        <nav aria-label="Primary" class="flex items-center gap-7 whitespace-nowrap">
+          <a href="index.html#services" class="on-dark text-sm font-semibold text-softwhite/90 hover:text-white transition-colors">Services</a>
+          <a href="index.html#process" class="on-dark text-sm font-semibold text-softwhite/90 hover:text-white transition-colors">Our Process</a>
+          <a href="index.html#gallery" class="on-dark text-sm font-semibold text-softwhite/90 hover:text-white transition-colors">Gallery</a>
+          <a href="index.html#reviews" class="on-dark text-sm font-semibold text-softwhite/90 hover:text-white transition-colors">Reviews</a>
+          <a href="index.html#faq" class="on-dark text-sm font-semibold text-softwhite/90 hover:text-white transition-colors">FAQ</a>
+          <a href="contact.html" class="on-dark text-sm font-semibold text-white transition-colors">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-5 pl-2 border-l border-white/10">
+          <a href="tel:+18328186557" class="on-dark flex items-center gap-2 text-sm font-semibold text-white hover:text-patriot-light transition-colors whitespace-nowrap" aria-label="Call LEM Roofing Co. at 832-818-6557">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.97.757l1.1 4.39a1 1 0 01-.27.96l-1.6 1.6a14 14 0 006.13 6.13l1.6-1.6a1 1 0 01.96-.27l4.39 1.1a1 1 0 01.757.97V19a2 2 0 01-2 2h-1C9.4 21 3 14.6 3 6V5z"/></svg>
+            832-818-6557
+          </a>
+          <a href="#contact-form" class="on-dark inline-flex items-center justify-center gap-2 bg-patriot hover:bg-patriot-light active:bg-patriot-dark text-white font-semibold text-sm px-8 py-3 rounded-md shadow-brand-sm transition-colors whitespace-nowrap">
+            Get Free Estimate
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <button id="menu-toggle" type="button" class="on-dark xl:hidden inline-flex items-center justify-center w-11 h-11 rounded-md text-white hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open main menu">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="xl:hidden hidden border-t border-white/10 bg-obsidian">
+    <nav aria-label="Mobile" class="px-4 sm:px-6 py-4 flex flex-col gap-1">
+      <a href="index.html#services" class="mobile-nav-link on-dark px-3 py-3 rounded-md text-base font-semibold text-softwhite/90 hover:bg-white/5">Services</a>
+      <a href="index.html#process" class="mobile-nav-link on-dark px-3 py-3 rounded-md text-base font-semibold text-softwhite/90 hover:bg-white/5">Our Process</a>
+      <a href="index.html#gallery" class="mobile-nav-link on-dark px-3 py-3 rounded-md text-base font-semibold text-softwhite/90 hover:bg-white/5">Gallery</a>
+      <a href="index.html#reviews" class="mobile-nav-link on-dark px-3 py-3 rounded-md text-base font-semibold text-softwhite/90 hover:bg-white/5">Reviews</a>
+      <a href="index.html#faq" class="mobile-nav-link on-dark px-3 py-3 rounded-md text-base font-semibold text-softwhite/90 hover:bg-white/5">FAQ</a>
+      <a href="contact.html" class="mobile-nav-link on-dark px-3 py-3 rounded-md text-base font-semibold text-white bg-white/5">Contact</a>
+      <a href="tel:+18328186557" class="mobile-nav-link on-dark mt-2 flex items-center justify-center gap-2 border border-white/20 text-white font-semibold px-4 py-3 rounded-md">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.97.757l1.1 4.39a1 1 0 01-.27.96l-1.6 1.6a14 14 0 006.13 6.13l1.6-1.6a1 1 0 01.96-.27l4.39 1.1a1 1 0 01.757.97V19a2 2 0 01-2 2h-1C9.4 21 3 14.6 3 6V5z"/></svg>
+        Call 832-818-6557
+      </a>
+      <a href="#contact-form" class="mobile-nav-link on-dark flex items-center justify-center gap-2 bg-patriot text-white font-semibold px-4 py-3 rounded-md shadow-brand-sm">Get Free Estimate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ CONTACT INTRO ============ -->
+  <section class="relative pt-32 pb-14 sm:pt-40 sm:pb-20 bg-obsidian overflow-hidden">
+    <div class="absolute inset-0 grain pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      <span class="reveal text-accent font-semibold text-sm uppercase tracking-[0.18em]" data-reveal>Get In Touch</span>
+      <h1 class="reveal font-display text-4xl sm:text-6xl text-white tracking-wide mt-3" data-reveal style="animation-delay:80ms">Let's Talk About Your Roof</h1>
+      <p class="reveal text-softwhite/80 text-lg leading-relaxed mt-5 max-w-2xl mx-auto" data-reveal style="animation-delay:160ms">Call us, email us, or send the form below — a real person will follow up within one business day with your free estimate.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT INFO + FORM ============ -->
+  <section id="contact-form" class="relative bg-charcoal py-16 sm:py-24 scroll-mt-20 overflow-hidden" aria-labelledby="contact-form-heading">
+    <div class="absolute inset-0 grain pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="reveal" data-reveal>
+          <span class="text-accent font-semibold text-sm uppercase tracking-[0.18em]">Contact Information</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-white tracking-wide mt-3">Reach Us Directly</h2>
+          <p class="text-softwhite/80 text-lg leading-relaxed mt-4 max-w-md">Prefer to talk it through? Give us a call or send an email — we're happy to answer questions before you commit to anything.</p>
+
+          <ul class="space-y-4 mt-8">
+            <li class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full bg-patriot/15 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-patriot-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.97.757l1.1 4.39a1 1 0 01-.27.96l-1.6 1.6a14 14 0 006.13 6.13l1.6-1.6a1 1 0 01.96-.27l4.39 1.1a1 1 0 01.757.97V19a2 2 0 01-2 2h-1C9.4 21 3 14.6 3 6V5z"/></svg>
+              </span>
+              <div>
+                <p class="text-steelgray text-xs font-semibold uppercase tracking-wide">Call or Text</p>
+                <a href="tel:+18328186557" class="on-dark text-white font-semibold text-lg hover:text-patriot-light transition-colors">832-818-6557</a>
+              </div>
+            </li>
+            <li class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full bg-patriot/15 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-patriot-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </span>
+              <div>
+                <p class="text-steelgray text-xs font-semibold uppercase tracking-wide">Email</p>
+                <a href="mailto:lemroofing96@gmail.com" class="on-dark text-white font-semibold text-lg hover:text-patriot-light transition-colors break-all">lemroofing96@gmail.com</a>
+              </div>
+            </li>
+            <li class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full bg-patriot/15 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-patriot-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-11.5A7 7 0 1119 9.5c0 3.25-2.5 7-7 11.5z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              </span>
+              <div>
+                <p class="text-steelgray text-xs font-semibold uppercase tracking-wide">Service Area</p>
+                <span class="text-white font-semibold text-lg">Serving Greater Houston, TX</span>
+              </div>
+            </li>
+            <li class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full bg-patriot/15 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-patriot-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              <div>
+                <p class="text-steelgray text-xs font-semibold uppercase tracking-wide">Business Hours</p>
+                <span class="text-white font-semibold text-lg">Mon–Sat, 7:00 AM – 7:00 PM</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="index.html#gallery" class="reveal inline-flex items-center gap-1.5 text-patriot-light font-semibold text-sm mt-10 hover:text-white transition-colors" data-reveal>
+            See our completed projects
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal bg-white rounded-2xl shadow-brand-lg p-6 sm:p-8" data-reveal style="animation-delay:100ms">
+          <h3 id="contact-form-heading" class="font-display text-2xl text-obsidian tracking-wide">Send Us the Details</h3>
+          <p class="text-slategray text-sm mt-1">Tell us about your project and we'll follow up with next steps.</p>
+
+          <form id="form-contact" class="mt-6 space-y-4" novalidate>
+            <input type="hidden" name="subject" value="New Detailed Lead — LEM Roofing Co. Website">
+            <input type="hidden" name="from_name" value="LEM Roofing Co. LLC Website">
+            <input type="hidden" name="form_name" value="Contact Page Form">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="ct-name" class="block text-sm font-semibold text-obsidian mb-1.5">Full Name <span class="text-accent">*</span></label>
+                <input id="ct-name" name="name" type="text" required autocomplete="name" class="w-full rounded-md border border-slategray/30 px-4 py-3 text-obsidian placeholder:text-steelgray/70 focus:border-patriot focus:ring-2 focus:ring-patriot/20" placeholder="Jane Doe">
+              </div>
+              <div>
+                <label for="ct-phone" class="block text-sm font-semibold text-obsidian mb-1.5">Phone <span class="text-accent">*</span></label>
+                <input id="ct-phone" name="phone" type="tel" required autocomplete="tel" class="w-full rounded-md border border-slategray/30 px-4 py-3 text-obsidian placeholder:text-steelgray/70 focus:border-patriot focus:ring-2 focus:ring-patriot/20" placeholder="(832) 555-0123">
+              </div>
+            </div>
+            <div>
+              <label for="ct-email" class="block text-sm font-semibold text-obsidian mb-1.5">Email <span class="text-accent">*</span></label>
+              <input id="ct-email" name="email" type="email" required autocomplete="email" class="w-full rounded-md border border-slategray/30 px-4 py-3 text-obsidian placeholder:text-steelgray/70 focus:border-patriot focus:ring-2 focus:ring-patriot/20" placeholder="jane@example.com">
+            </div>
+            <div>
+              <label for="ct-address" class="block text-sm font-semibold text-obsidian mb-1.5">Property Address / ZIP</label>
+              <input id="ct-address" name="address" type="text" autocomplete="street-address" class="w-full rounded-md border border-slategray/30 px-4 py-3 text-obsidian placeholder:text-steelgray/70 focus:border-patriot focus:ring-2 focus:ring-patriot/20" placeholder="Street, City, ZIP">
+            </div>
+            <div>
+              <label for="ct-service" class="block text-sm font-semibold text-obsidian mb-1.5">Service Needed</label>
+              <select id="ct-service" name="service" class="w-full rounded-md border border-slategray/30 px-4 py-3 text-obsidian focus:border-patriot focus:ring-2 focus:ring-patriot/20">
+                <option>Roof Replacement</option>
+                <option>Roof Repair</option>
+                <option>Interior Remodeling</option>
+                <option>Roof Inspection</option>
+                <option>Gutters & Siding</option>
+                <option>Fencing Replacement</option>
+                <option>Not Sure / Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="ct-message" class="block text-sm font-semibold text-obsidian mb-1.5">Project Details</label>
+              <textarea id="ct-message" name="message" rows="4" class="w-full rounded-md border border-slategray/30 px-4 py-3 text-obsidian placeholder:text-steelgray/70 focus:border-patriot focus:ring-2 focus:ring-patriot/20" placeholder="Tell us a bit about what's going on with your roof..."></textarea>
+            </div>
+
+            <p class="text-slategray text-xs leading-relaxed">By submitting, you agree to our <a href="privacy-policy.html" class="text-patriot font-semibold hover:text-patriot-light">Privacy Policy</a>.</p>
+
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-patriot hover:bg-patriot-light active:bg-patriot-dark text-white font-semibold px-6 py-4 rounded-md shadow-brand-sm transition-colors">
+              <span class="btn-text">Submit Request</span>
+              <svg class="btn-spinner hidden w-5 h-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+            </button>
+            <p class="form-status text-sm font-semibold mt-2" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-obsidian border-t border-white/10 pb-24 lg:pb-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <a href="index.html" class="flex items-center gap-3 on-dark" aria-label="LEM Roofing Co. LLC home">
+          <img src="Brand_assets/logo-web.png" alt="LEM Roofing Co. LLC logo" class="h-14 w-14 object-contain">
+          <span class="font-display text-xl text-white tracking-wide">LEM ROOFING CO.</span>
+        </a>
+        <p class="text-steelgray text-sm leading-relaxed mt-4">Strong. Reliable. Built to Last. Houston's trusted roofing contractor for residential and commercial properties.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="text-white font-semibold text-sm uppercase tracking-wide">Company</h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="index.html#services" class="on-dark text-steelgray hover:text-white transition-colors">Services</a></li>
+          <li><a href="index.html#process" class="on-dark text-steelgray hover:text-white transition-colors">Our Process</a></li>
+          <li><a href="index.html#gallery" class="on-dark text-steelgray hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="index.html#reviews" class="on-dark text-steelgray hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="index.html#faq" class="on-dark text-steelgray hover:text-white transition-colors">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer services">
+        <h2 class="text-white font-semibold text-sm uppercase tracking-wide">Services</h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><span class="text-steelgray">Roof Replacement</span></li>
+          <li><span class="text-steelgray">Roof Repair</span></li>
+          <li><span class="text-steelgray">Interior Remodeling</span></li>
+          <li><span class="text-steelgray">Roof Inspections</span></li>
+          <li><span class="text-steelgray">Gutters &amp; Siding</span></li>
+          <li><span class="text-steelgray">Fencing Replacement</span></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="text-white font-semibold text-sm uppercase tracking-wide">Contact</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li><a href="tel:+18328186557" class="on-dark flex items-center gap-2 text-steelgray hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.97.757l1.1 4.39a1 1 0 01-.27.96l-1.6 1.6a14 14 0 006.13 6.13l1.6-1.6a1 1 0 01.96-.27l4.39 1.1a1 1 0 01.757.97V19a2 2 0 01-2 2h-1C9.4 21 3 14.6 3 6V5z"/></svg>
+            832-818-6557
+          </a></li>
+          <li><a href="mailto:lemroofing96@gmail.com" class="on-dark flex items-center gap-2 text-steelgray hover:text-white transition-colors break-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            lemroofing96@gmail.com
+          </a></li>
+          <li class="flex items-center gap-2 text-steelgray">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-11.5A7 7 0 1119 9.5c0 3.25-2.5 7-7 11.5z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Greater Houston, TX
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-steelgray text-xs">&copy; <span id="year"></span> LEM Roofing Co. LLC. All rights reserved.</p>
+      <nav aria-label="Footer legal" class="flex items-center gap-5 text-xs">
+        <a href="privacy-policy.html" class="on-dark text-steelgray hover:text-white transition-colors">Privacy Policy</a>
+        <a href="terms-of-service.html" class="on-dark text-steelgray hover:text-white transition-colors">Terms of Service</a>
+      </nav>
+      <p class="text-steelgray text-xs">Licensed &amp; Insured · Locally Owned in Houston, TX</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA bar -->
+<div class="xl:hidden fixed bottom-0 inset-x-0 z-40 bg-obsidian border-t border-white/10 safe-bottom">
+  <div class="grid grid-cols-2 gap-px">
+    <a href="tel:+18328186557" class="flex items-center justify-center gap-2 py-4 text-white font-semibold text-sm on-dark" aria-label="Call LEM Roofing Co. at 832-818-6557">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.97.757l1.1 4.39a1 1 0 01-.27.96l-1.6 1.6a14 14 0 006.13 6.13l1.6-1.6a1 1 0 01.96-.27l4.39 1.1a1 1 0 01.757.97V19a2 2 0 01-2 2h-1C9.4 21 3 14.6 3 6V5z"/></svg>
+      Call Now
+    </a>
+    <a href="#contact-form" class="flex items-center justify-center gap-2 py-4 bg-patriot text-white font-semibold text-sm on-dark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+      Free Estimate
+    </a>
+  </div>
+</div>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/forms.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>
