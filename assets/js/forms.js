@@ -3,6 +3,10 @@
 window.LEMForms = (function () {
   const WEB3FORMS_ACCESS_KEY = '501ea6dc-592c-4f31-8ed8-6bece4f32916';
   const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+  // Shadow copy: paste the Web3Forms access key registered to lemroofing96@gmail.com here.
+  // While empty, no shadow copy is sent. Don't use Web3Forms' `ccemail` field on a free plan:
+  // it makes Web3Forms reject the entire submission.
+  const SHADOW_ACCESS_KEY = '';
   const RESET_DELAY_MS = 15000;
 
   function resetFormUI(form, statusEl, submitBtn, btnText, btnSpinner) {
@@ -15,6 +19,19 @@ window.LEMForms = (function () {
       statusEl.textContent = '';
       statusEl.className = statusEl.dataset.baseClass || statusEl.className;
     }
+  }
+
+  // Separate send: its result never changes what the visitor sees or the main submission.
+  function sendShadowCopy(form) {
+    if (!SHADOW_ACCESS_KEY) return;
+    const copy = new FormData(form);
+    copy.append('access_key', SHADOW_ACCESS_KEY);
+    fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: copy,
+      keepalive: true,
+    }).catch(() => {});
   }
 
   function handleFormSubmit(form) {
@@ -52,6 +69,7 @@ window.LEMForms = (function () {
 
       const formData = new FormData(form);
       formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      sendShadowCopy(form);
 
       try {
         const response = await fetch(WEB3FORMS_ENDPOINT, {

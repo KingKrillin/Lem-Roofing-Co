@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com https://unpkg.com; connect-src 'self' https://api.web3forms.com https://*.basemaps.cartocdn.com; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://tiles.openfreemap.org; connect-src 'self' https://api.web3forms.com https://tiles.openfreemap.org; worker-src blob:; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>LEM ROOFING CO. LLC Home</title>
 <meta name="description" content="LEM Roofing Co. LLC provides roof replacement, repair, interior remodeling, gutters, fencing, and inspections across Houston, TX. Strong. Reliable. Built to Last. Get your free estimate today.">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" integrity="sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V" crossorigin="">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="assets/js/tailwind-config.js"></script>
@@ -396,7 +396,96 @@
         <p class="text-slategray text-lg leading-relaxed mt-4">A look at real roofs we've repaired, replaced, and protected across the Houston area.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+      <!-- Project cards: photos are listed in assets/js/home.js (initProjectGallery) -->
+      <article class="reveal mt-12 grid lg:grid-cols-5 rounded-xl overflow-hidden bg-obsidian shadow-brand-md" data-reveal aria-labelledby="davinci-heading">
+        <button type="button" class="project-cover on-dark group relative block w-full lg:col-span-3 overflow-hidden cursor-pointer" data-gallery-project="davinci" data-gallery-open="0" aria-label="Open the DaVinci roof shingle project photos">
+          <img src="assets/gallery/davinci-roof/01-aerial-view.jpg" alt="Aerial view of a large Tudor-style home with a new slate-look DaVinci shingle roof" width="1024" height="768" class="w-full h-72 sm:h-96 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          <span class="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent" aria-hidden="true"></span>
+          <span class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-obsidian/80 text-white text-sm font-semibold px-3 py-2 rounded-md">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path stroke-linecap="round" stroke-linejoin="round" d="m21 16-5-5-8 8"/></svg>
+            <span><span data-gallery-count="davinci">6</span> Photos</span>
+          </span>
+        </button>
+        <div class="lg:col-span-2 p-6 sm:p-8 flex flex-col">
+          <span class="text-accent font-semibold text-sm uppercase tracking-[0.18em]">Featured Project</span>
+          <h3 id="davinci-heading" class="font-display text-3xl sm:text-4xl text-white tracking-wide mt-2">DaVinci Roof Shingle Project</h3>
+          <p class="text-white font-semibold mt-1">Sugar Land, TX</p>
+          <p class="text-softwhite/80 leading-relaxed mt-3">A high-end DaVinci shingle roof, shown from the air, from the ridge, and from the ground.</p>
+          <div class="grid grid-cols-3 gap-2 mt-6 lg:mt-auto lg:pt-6">
+            <button type="button" class="project-peek on-dark" data-gallery-project="davinci" data-gallery-open="1" aria-label="View photo 2 of the DaVinci project">
+              <img src="assets/gallery/davinci-roof/thumbs/02-garage-roof.jpg" alt="" loading="lazy">
+            </button>
+            <button type="button" class="project-peek on-dark" data-gallery-project="davinci" data-gallery-open="2" aria-label="View photo 3 of the DaVinci project">
+              <img src="assets/gallery/davinci-roof/thumbs/03-backyard-view.jpg" alt="" loading="lazy">
+            </button>
+            <button type="button" class="project-peek on-dark" data-gallery-project="davinci" data-gallery-open="3" aria-label="View photo 4 of the DaVinci project">
+              <img src="assets/gallery/davinci-roof/thumbs/04-skyline-view.jpg" alt="" loading="lazy">
+              <span class="project-peek-more" aria-hidden="true">+<span data-gallery-more="davinci">3</span></span>
+            </button>
+          </div>
+          <button type="button" class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark active:bg-accent-dark text-white font-semibold px-6 py-4 rounded-md shadow-accent-sm transition-colors on-dark" data-gallery-project="davinci" data-gallery-open="0">
+            <span>View All <span data-gallery-count="davinci">6</span> Photos</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="reveal mt-5 grid lg:grid-cols-5 rounded-xl overflow-hidden bg-obsidian shadow-brand-md" data-reveal aria-labelledby="cypress-heading">
+        <button type="button" class="project-cover on-dark group relative block w-full lg:col-span-3 lg:order-2 overflow-hidden cursor-pointer" data-gallery-project="cypress" data-gallery-open="0" aria-label="Open the Cypress shingle roof project photos">
+          <img src="assets/gallery/cypress-shingle-roof/01-ridge-vent.jpg" alt="New dark architectural shingle roof with a ridge vent, above a residential street" width="1600" height="739" class="w-full h-72 sm:h-96 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          <span class="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent" aria-hidden="true"></span>
+          <span class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-obsidian/80 text-white text-sm font-semibold px-3 py-2 rounded-md">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path stroke-linecap="round" stroke-linejoin="round" d="m21 16-5-5-8 8"/></svg>
+            <span><span data-gallery-count="cypress">5</span> Photos</span>
+          </span>
+        </button>
+        <div class="lg:col-span-2 lg:order-1 p-6 sm:p-8 flex flex-col">
+          <span class="text-accent font-semibold text-sm uppercase tracking-[0.18em]">Recent Project</span>
+          <h3 id="cypress-heading" class="font-display text-3xl sm:text-4xl text-white tracking-wide mt-2">Architectural Shingle Roof</h3>
+          <p class="text-white font-semibold mt-1">Cypress, TX</p>
+          <p class="text-softwhite/80 leading-relaxed mt-3">Dark architectural shingles with a ridge vent, shown from the ridge and along each slope.</p>
+          <div class="grid grid-cols-3 gap-2 mt-6 lg:mt-auto lg:pt-6">
+            <button type="button" class="project-peek on-dark" data-gallery-project="cypress" data-gallery-open="1" aria-label="View photo 2 of the Cypress project">
+              <img src="assets/gallery/cypress-shingle-roof/thumbs/02-street-view.jpg" alt="" loading="lazy">
+            </button>
+            <button type="button" class="project-peek on-dark" data-gallery-project="cypress" data-gallery-open="2" aria-label="View photo 3 of the Cypress project">
+              <img src="assets/gallery/cypress-shingle-roof/thumbs/03-rear-slope.jpg" alt="" loading="lazy">
+            </button>
+            <button type="button" class="project-peek on-dark" data-gallery-project="cypress" data-gallery-open="3" aria-label="View photo 4 of the Cypress project">
+              <img src="assets/gallery/cypress-shingle-roof/thumbs/04-long-slope.jpg" alt="" loading="lazy">
+              <span class="project-peek-more" aria-hidden="true">+<span data-gallery-more="cypress">2</span></span>
+            </button>
+          </div>
+          <button type="button" class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark active:bg-accent-dark text-white font-semibold px-6 py-4 rounded-md shadow-accent-sm transition-colors on-dark" data-gallery-project="cypress" data-gallery-open="0">
+            <span>View All <span data-gallery-count="cypress">5</span> Photos</span>
+          </button>
+        </div>
+      </article>
+
+      <dialog id="project-gallery" class="project-gallery" aria-labelledby="project-gallery-title">
+        <div class="project-gallery-inner">
+          <header class="flex items-center justify-between gap-4 px-4 sm:px-6 py-3">
+            <div class="min-w-0">
+              <h3 id="project-gallery-title" class="font-display text-xl sm:text-2xl text-white tracking-wide truncate"></h3>
+              <p class="text-softwhite/70 text-sm" aria-live="polite"><span id="project-gallery-location"></span> · Photo <span id="project-gallery-current">1</span> of <span id="project-gallery-total"></span></p>
+            </div>
+            <button type="button" id="project-gallery-close" class="project-gallery-btn on-dark" aria-label="Close photos">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+          </header>
+          <div class="relative flex-1 min-h-0">
+            <div id="project-gallery-track" class="project-gallery-track no-scrollbar"></div>
+            <button type="button" id="project-gallery-prev" class="project-gallery-btn project-gallery-nav left-2 sm:left-4 on-dark" aria-label="Previous photo">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m15 5-7 7 7 7"/></svg>
+            </button>
+            <button type="button" id="project-gallery-next" class="project-gallery-btn project-gallery-nav right-2 sm:right-4 on-dark" aria-label="Next photo">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+          <div id="project-gallery-thumbs" class="project-gallery-thumbs no-scrollbar"></div>
+        </div>
+      </dialog>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
         <figure class="reveal group relative rounded-xl overflow-hidden shadow-brand-sm" data-reveal>
           <img src="assets/gallery/full-roof-replacement-1.jpg" alt="Aerial view of a full roof tear-off and replacement in progress on a large home" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/10 to-transparent"></div>
@@ -431,6 +520,58 @@
     </div>
   </section>
 
+  <!-- ============ COMPANY PRESIDENT ============ -->
+  <section id="about" class="bg-obsidian py-20 sm:py-28 scroll-mt-20" aria-labelledby="president-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="reveal lg:col-span-5" data-reveal>
+        <img src="assets/about/company-president.jpg" alt="The president of LEM Roofing Co. wearing a black LEM Roofing polo shirt and cap" width="1102" height="1427" class="w-full max-w-md mx-auto lg:max-w-none rounded-xl shadow-brand-lg" loading="lazy">
+      </div>
+      <div class="reveal lg:col-span-7" data-reveal style="animation-delay:80ms">
+        <span class="text-accent font-semibold text-sm uppercase tracking-[0.18em]">Meet Our President</span>
+        <!-- TODO: replace this heading with the president's full name once confirmed -->
+        <h2 id="president-heading" class="font-display text-4xl sm:text-5xl text-white tracking-wide mt-3">The Leader Behind LEM Roofing</h2>
+        <p class="text-white font-semibold mt-2">President, LEM Roofing Co. LLC</p>
+        <p class="text-softwhite/80 text-lg leading-relaxed mt-5">LEM Roofing Co. is locally owned here in Houston, and our president leads the company with the same values you see on every job: patriotic pride and dependable craftsmanship.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHINGLE CERTIFICATIONS ============ -->
+  <section id="certifications" class="bg-softwhite py-20 sm:py-28 scroll-mt-20" aria-labelledby="certifications-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl reveal" data-reveal>
+        <span class="text-accent font-semibold text-sm uppercase tracking-[0.18em]">Credentials</span>
+        <h2 id="certifications-heading" class="font-display text-4xl sm:text-5xl text-obsidian tracking-wide mt-3">Shingle Certifications</h2>
+        <p class="text-slategray text-lg leading-relaxed mt-4">Training and credentials from leading shingle manufacturers.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 mt-12">
+        <article class="reveal flex flex-col bg-white rounded-xl overflow-hidden shadow-brand-sm" data-reveal>
+          <a href="assets/certifications/certainteed-master-craftsman.jpg" target="_blank" rel="noopener" class="cert-image group block overflow-hidden" aria-label="View the full CertainTeed Master Craftsman certificate (opens in a new tab)">
+            <img src="assets/certifications/certainteed-master-craftsman.jpg" alt="CertainTeed Master Craftsman certificate of completion issued to Ezequiel Miranda, valid through October 23, 2028" width="1426" height="1103" class="w-full transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy">
+          </a>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-2xl sm:text-3xl text-obsidian tracking-wide">CertainTeed Master Craftsman</h3>
+            <p class="text-slategray leading-relaxed mt-2">Ezequiel Miranda completed CertainTeed's Master Craftsman training program for residential roofing, including the Shingle Applicator's Manual examination.</p>
+            <p class="text-obsidian text-sm font-semibold mt-3">Valid through October 23, 2028</p>
+          </div>
+        </article>
+
+        <!-- TODO: when the GAF certificate is uploaded, replace the .cert-placeholder div with an image link like the CertainTeed one, and confirm the certification's exact name -->
+        <article class="reveal flex flex-col bg-white rounded-xl overflow-hidden shadow-brand-sm" data-reveal style="animation-delay:80ms">
+          <div class="cert-placeholder flex flex-col items-center justify-center gap-3 bg-charcoal text-white">
+            <svg class="w-14 h-14 text-softwhite/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7.5 3v5.25c0 4.6-3.1 8.1-7.5 9.75-4.4-1.65-7.5-5.15-7.5-9.75V6L12 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>
+            <span class="font-display text-4xl tracking-wide">GAF</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-2xl sm:text-3xl text-obsidian tracking-wide">GAF Shingle Certification</h3>
+            <p class="text-slategray leading-relaxed mt-2">LEM Roofing Co. also holds a certification for GAF shingles.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ TESTIMONIALS ============ -->
   <section id="reviews" class="bg-charcoal py-20 sm:py-28 scroll-mt-20" aria-labelledby="reviews-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -439,12 +580,21 @@
         <h2 id="reviews-heading" class="font-display text-4xl sm:text-5xl text-white tracking-wide mt-3">What Houston Homeowners Are Saying</h2>
       </div>
 
-      <!-- NOTE: sample/placeholder testimonials — replace with real verified customer reviews (e.g. pulled from Google) before launch -->
+      <!-- NOTE: Sonia Ramos is a real customer review (no star rating was supplied, so none is shown). All the others are sample/placeholder testimonials — replace with real verified customer reviews (e.g. pulled from Google) before launch -->
       <div class="relative mt-12">
         <button id="reviews-prev" type="button" aria-label="Show previous reviews" class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-11 h-11 items-center justify-center rounded-full bg-charcoal border border-white/15 text-white shadow-brand-sm hover:bg-white/10 hover:border-white/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-charcoal">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
         </button>
         <div id="reviews-track" class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 no-scrollbar">
+        <figure class="reveal snap-start shrink-0 w-[82%] sm:w-[47%] lg:w-[calc((100%-2.5rem)/3)] bg-obsidian rounded-2xl p-5 border border-white/5" data-reveal>
+          <blockquote class="text-softwhite/90 text-sm leading-relaxed" lang="es">“¡Estoy tan feliz con mi techo! 🥰 Quedó increíblemente hermoso. Estoy muy contenta de haber elegido trabajar contigo; hiciste un trabajo excelente y se nota el cuidado y la dedicación que le pusiste. ¡Estoy encantada con el resultado y no podría estar más feliz con mi hermoso techo! ❤️🏠”</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">English translation</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1">"I'm so happy with my roof! It turned out incredibly beautiful. I'm very glad I chose to work with you; you did an excellent job, and the care and dedication you put into it really shows. I'm delighted with the result and couldn't be happier with my beautiful roof!"</p>
+          <figcaption class="flex items-center gap-3 mt-5">
+            <span class="w-9 h-9 rounded-full bg-patriot flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">SR</span>
+            <span class="text-white text-sm font-semibold">Sonia Ramos — Spring, TX</span>
+          </figcaption>
+        </figure>
         <figure class="reveal snap-start shrink-0 w-[82%] sm:w-[47%] lg:w-[calc((100%-2.5rem)/3)] bg-obsidian rounded-2xl p-5 border border-white/5" data-reveal>
           <div class="star-row flex gap-1" role="img" aria-label="5 out of 5 stars">
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
@@ -454,6 +604,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"LEM Roofing replaced our roof after a hail storm and handled the entire insurance process for us. Professional from start to finish."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"LEM Roofing reemplazó nuestro techo después de una granizada y se encargó de todo el proceso con el seguro. Profesionales de principio a fin."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-patriot flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">MR</span>
             <span class="text-white text-sm font-semibold">Michael Reed — Katy, TX</span>
@@ -468,6 +620,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"Fast response, fair pricing, and the crew cleaned up perfectly after the job. Highly recommend for anyone in the Houston area."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Respuesta rápida, precios justos y el equipo dejó todo perfectamente limpio al terminar. Muy recomendados para cualquiera en el área de Houston."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">JT</span>
             <span class="text-white text-sm font-semibold">Jason Turner — Pearland, TX</span>
@@ -482,6 +636,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"Our commercial building needed a flat roof repair fast. LEM got it done with zero disruption to our business."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Nuestro edificio comercial necesitaba una reparación rápida del techo plano. LEM la hizo sin interrumpir para nada nuestro negocio."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-slategray flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">DC</span>
             <span class="text-white text-sm font-semibold">David Chen — Sugar Land, TX</span>
@@ -495,7 +651,9 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
-          <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"A full roof replacement that held up perfectly through the next storm season. Daniel and his crew showed up on time and explained everything along the way."</blockquote>
+          <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"A full roof replacement that held up perfectly through the next storm season. Ezequiel and his crew showed up on time and explained everything along the way."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Un reemplazo completo del techo que resistió perfectamente la siguiente temporada de tormentas. Ezequiel y su equipo llegaron a tiempo y nos explicaron todo durante el proceso."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-patriot flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">DR</span>
             <span class="text-white text-sm font-semibold">Daniel Reyes — Cleveland, TX</span>
@@ -510,6 +668,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"We had water stains spreading across our ceiling from a slow roof leak. LEM fixed the roof and then repaired and repainted the drywall so you'd never know it happened."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Teníamos manchas de agua que se extendían por el cielo raso debido a una pequeña gotera en el techo. LEM arregló el techo y luego reparó y pintó el drywall; ahora ni se nota que pasó algo."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">KW</span>
             <span class="text-white text-sm font-semibold">Karen Whitfield — Conroe, TX</span>
@@ -524,6 +684,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"Our old wood fence finally gave out and LEM rebuilt it in a weekend. Solid construction and it looks great with the house."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Nuestra vieja cerca de madera por fin cedió y LEM la reconstruyó en un fin de semana. Construcción sólida y combina muy bien con la casa."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-slategray flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">MB</span>
             <span class="text-white text-sm font-semibold">Marcus Bell — Waller, TX</span>
@@ -538,6 +700,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"Called about a small leak and they had someone out the next morning. Fixed the flashing around the chimney and didn't try to upsell us on a job we didn't need."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Llamamos por una pequeña gotera y a la mañana siguiente ya tenían a alguien aquí. Arreglaron el tapajuntas alrededor de la chimenea y no trataron de vendernos un trabajo que no necesitábamos."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-patriot flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">PN</span>
             <span class="text-white text-sm font-semibold">Priya Nair — Dayton, TX</span>
@@ -552,6 +716,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"New gutters and fixed siding in one visit. Everything matches the house perfectly and the crew left the yard cleaner than they found it."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Canaletas nuevas y revestimiento reparado en una sola visita. Todo combina perfectamente con la casa y el equipo dejó el jardín más limpio de lo que lo encontró."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">TC</span>
             <span class="text-white text-sm font-semibold">Tom Castillo — Humble, TX</span>
@@ -566,6 +732,8 @@
             <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
           <blockquote class="text-softwhite/90 text-sm leading-relaxed mt-3">"Had LEM do a full inspection before we sold our house. The report was detailed and gave our buyers real peace of mind during closing."</blockquote>
+          <p class="text-steelgray text-xs font-semibold uppercase tracking-wider mt-4">Traducción al español</p>
+          <p class="text-softwhite/70 text-sm leading-relaxed mt-1" lang="es">"Contratamos a LEM para una inspección completa antes de vender nuestra casa. El informe fue detallado y les dio verdadera tranquilidad a nuestros compradores durante el cierre."</p>
           <figcaption class="flex items-center gap-3 mt-5">
             <span class="w-9 h-9 rounded-full bg-slategray flex items-center justify-center text-white font-semibold text-xs" aria-hidden="true">BH</span>
             <span class="text-white text-sm font-semibold">Brittany Hughes — Aldine, TX</span>
@@ -582,12 +750,12 @@
   <!-- ============ SERVICE AREA + MAP ============ -->
   <section aria-labelledby="area-heading" class="bg-softwhite py-20 sm:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-10">
         <div class="reveal" data-reveal>
           <span class="text-accent font-semibold text-sm uppercase tracking-[0.18em]">Service Area</span>
           <h2 id="area-heading" class="font-display text-4xl sm:text-5xl text-obsidian tracking-wide mt-3">Proudly Serving Greater Houston</h2>
-          <p class="text-slategray text-lg leading-relaxed mt-4">Wherever you are in the Houston metro, LEM Roofing Co. is ready to help protect your home or business.</p>
-          <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mt-8">
+          <p class="text-slategray text-lg leading-relaxed mt-4 max-w-2xl">Wherever you are in the Houston metro, LEM Roofing Co. is ready to help protect your home or business.</p>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8">
             <li class="flex items-center gap-2 text-obsidian font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-11.5A7 7 0 1119 9.5c0 3.25-2.5 7-7 11.5z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Houston</li>
             <li class="flex items-center gap-2 text-obsidian font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-11.5A7 7 0 1119 9.5c0 3.25-2.5 7-7 11.5z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Katy</li>
             <li class="flex items-center gap-2 text-obsidian font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-11.5A7 7 0 1119 9.5c0 3.25-2.5 7-7 11.5z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Sugar Land</li>
@@ -607,7 +775,7 @@
             <li class="flex items-center gap-2 text-obsidian font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-11.5A7 7 0 1119 9.5c0 3.25-2.5 7-7 11.5z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Galveston</li>
           </ul>
         </div>
-        <div class="reveal rounded-2xl overflow-hidden shadow-brand-md border border-slategray/10 h-[420px] lg:h-[480px]" data-reveal style="animation-delay:100ms">
+        <div class="reveal rounded-2xl overflow-hidden shadow-brand-md border border-slategray/10 h-[520px] lg:h-[680px]" data-reveal style="animation-delay:100ms">
           <div id="service-map" class="w-full h-full" role="img" aria-label="Map of the greater Houston, Texas area marking all LEM Roofing Co. service area cities"></div>
         </div>
       </div>
@@ -830,7 +998,7 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" integrity="sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj" crossorigin=""></script>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/forms.js"></script>
 <script src="assets/js/home.js"></script>
