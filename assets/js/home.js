@@ -209,7 +209,7 @@
     },
     cypress: {
       title: '30-Year Timberline HDZ Charcoal Architectural Shingle Roof',
-      location: 'Cypress, TX',
+      location: 'Spring, TX',
       dir: 'assets/gallery/cypress-shingle-roof/',
       photos: [
         { file: '01-ridge-vent.jpg', alt: 'Ridge vent and pipe flashing on a dark shingle roof above a residential street' },
