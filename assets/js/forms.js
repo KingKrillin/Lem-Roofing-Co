@@ -6,7 +6,7 @@ window.LEMForms = (function () {
   // Shadow copy: paste the Web3Forms access key registered to lemroofing96@gmail.com here.
   // While empty, no shadow copy is sent. Don't use Web3Forms' `ccemail` field on a free plan:
   // it makes Web3Forms reject the entire submission.
-  const SHADOW_ACCESS_KEY = '';
+  const SHADOW_ACCESS_KEY = 'aef7380e-c83b-4338-bf73-b49e52cb35a7';
   const RESET_DELAY_MS = 15000;
 
   function resetFormUI(form, statusEl, submitBtn, btnText, btnSpinner) {

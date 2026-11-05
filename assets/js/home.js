@@ -208,7 +208,7 @@
       ],
     },
     cypress: {
-      title: 'Architectural Shingle Roof',
+      title: '30-Year Timberline HDZ Charcoal Architectural Shingle Roof',
       location: 'Cypress, TX',
       dir: 'assets/gallery/cypress-shingle-roof/',
       photos: [
